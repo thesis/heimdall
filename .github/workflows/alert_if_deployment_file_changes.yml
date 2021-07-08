@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - temp/*
+    paths:
+      - "**/heimdall-hubot-deployment.yaml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a one-line script
+        run: echo You should not see this text if the deployment yaml did not change
